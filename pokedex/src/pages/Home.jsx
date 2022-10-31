@@ -13,7 +13,7 @@ import { Skeletons } from '../components/Skeletons';
 
 function Home() {
    
-    const qtd = 300;
+    const qtd = 100;
 
     const [pokemons, setPokemons]= useState([])
 
