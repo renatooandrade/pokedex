@@ -6,13 +6,14 @@ import {Grid} from "@mui/material"
 import axios from "axios"
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Skeletons } from '../components/Skeletons';
 
 
 
 
 function Home() {
    
-    const qtd = 100;
+    const qtd = 300;
 
     const [pokemons, setPokemons]= useState([])
 
@@ -55,17 +56,19 @@ function Home() {
 
         <Navbar pokemonFilter={pokemonFilter}></Navbar>
         <Container maxWidth='false  '>
+           
 
             <Grid container display="flex" justifyContent="center">
-                    {pokemons.map((pokemon, key)=>
+                    {pokemons.length ===0 ? (<Skeletons/>) : (
+                    pokemons.map((pokemon, key)=>
                     <Grid item xs={12} sm={6} md={4} lg={2.1} key={key}>
                     <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} types={pokemon.data.types}></PokemonCard>
                     </Grid>
-                )}
-                
-                
-                
+                    )
+                )} 
             </Grid>
+    
+        
 
         </Container>
         </div>

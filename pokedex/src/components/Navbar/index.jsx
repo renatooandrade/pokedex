@@ -56,13 +56,15 @@ export default function Navbar({pokemonFilter}) {
         <Toolbar>
           
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            textAlign="center"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}         
           >
             Pokemon
           </Typography>
+
           <Search onChange={(e)=>{pokemonFilter(e.target.value)}}>
             <SearchIconWrapper>
               <SearchIcon />
@@ -72,6 +74,8 @@ export default function Navbar({pokemonFilter}) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+
+
         </Toolbar>
       </AppBar>
     </Box>
